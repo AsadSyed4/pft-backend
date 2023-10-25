@@ -33,7 +33,10 @@ npm install
 
 ## For Database and dummy data
 php artisan migrate
-php artisan db:seed
+php artisan db:seed --class=UsersTableSeeder
+php artisan db:seed --class=ClientsTableSeeder
+php artisan db:seed --class=FeedbacksTableSeeder
+php artisan db:seed --class=CommentsTableSeeder
 
 ## Credentials for Admin
 email:admin@pft.com
