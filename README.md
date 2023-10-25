@@ -32,15 +32,15 @@ composer install
 npm install
 
 ## For Database and dummy data
-php artisan migrate
-php artisan db:seed --class=UsersTableSeeder
-php artisan db:seed --class=ClientsTableSeeder
-php artisan db:seed --class=FeedbacksTableSeeder
-php artisan db:seed --class=CommentsTableSeeder
+### php artisan migrate
+### php artisan db:seed --class=UsersTableSeeder
+### php artisan db:seed --class=ClientsTableSeeder
+### php artisan db:seed --class=FeedbacksTableSeeder
+### php artisan db:seed --class=CommentsTableSeeder
 
 ## Credentials for Admin
-email:admin@pft.com
-password:12345678
+### email:admin@pft.com
+### password:12345678
 
 # License
 This project is open-source and available under the MIT License.
