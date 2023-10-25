@@ -1,5 +1,5 @@
 <?php
-namespace App\Utilities;
+namespace App\Services\Utilities;
 
 use App\Contracts\IHttpResponse;
 use App\Contracts\ResponseData;
