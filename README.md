@@ -25,7 +25,7 @@ Inertia.js: A library for building server-driven single-page apps.
 To install and set up the project, follow these steps:
 
 ## Clone the repository
-git clone https://github.com/your-username/product-feedback-tool.git
+git clone [https://github.com/AsadSyed4/pft-backend.git]
 
 ## Install PHP and JavaScript dependencies
 composer install
