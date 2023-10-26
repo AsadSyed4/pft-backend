@@ -46,7 +46,7 @@ class FeedbackController extends Controller
             return HttpResponse::json(new ResponseData(HttpMessages::NotFound->value, HttpCodes::NotFound, []));
         }
 
-        return HttpResponse::json(new ResponseData(HttpMessages::Deleted->value, HttpCodes::Ok, $feedback->toArray()));
+        return HttpResponse::json(new ResponseData(HttpMessages::Found->value, HttpCodes::Ok, $feedback->toArray()));
     }
 
     /**

@@ -32,7 +32,7 @@ class AuthController extends Controller
             return HttpResponse::json(new ResponseData($validator->errors(), HttpCodes::UnprocessableEntity, []));
         }
 
-        $client = Client::create([
+        Client::create([
             'name' => $request->name,
             'email' => $request->email,
             'username' => $request->username,
@@ -40,6 +40,40 @@ class AuthController extends Controller
         ]);
 
         return HttpResponse::json(new ResponseData(HttpMessages::Created->value, HttpCodes::Created, []));
+    }
+
+    /**
+     * Check username from table.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function check_username(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'username' => 'nullable|unique:clients,username',
+        ]);
+        if ($validator->fails()) {
+            return HttpResponse::json(new ResponseData(HttpMessages::Exist->value, HttpCodes::Ok, []));
+        }
+        return HttpResponse::json(new ResponseData(HttpMessages::NotExist->value, HttpCodes::Ok, []));
+    }
+
+    /**
+     * Check email from table.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function check_email(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'nullable|unique:clients,email',
+        ]);
+        if ($validator->fails()) {
+            return HttpResponse::json(new ResponseData(HttpMessages::Exist->value, HttpCodes::Ok, []));
+        }
+        return HttpResponse::json(new ResponseData(HttpMessages::NotExist->value, HttpCodes::Ok, []));
     }
 
     /**
@@ -73,7 +107,6 @@ class AuthController extends Controller
 
         return HttpResponse::json(new ResponseData(HttpMessages::LoggedIn->value, HttpCodes::Ok, $client->toArray()));
     }
-
 
     /**
      * Logout the authenticated client.

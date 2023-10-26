@@ -18,6 +18,8 @@ enum HttpMessages: string
     case ServiceUnavailable = "Failed!";
     case LoggedIn = "Login Successfully!";
     case LoggedOut = "Logout Successfully!";
+    case NotExist = "Not Exist!";
+    case Exist = "Exist!";
     case SessionNotFound = "Session Doesn't Exist!";
 
 }
